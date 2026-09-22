@@ -10970,3 +10970,34 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+@media print {
+
+  /* Hide interactive site elements like download buttons or navbars */
+  .no-print,
+  nav,
+  footer,
+  #download-btn {
+    display: none !important;
+  }
+
+  /* Ensure background colors and images print properly */
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Prevent page breaks inside key blocks like jobs or education items */
+  .job-item,
+  .education-item,
+  .project-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Unfurl links to show full URL text if desired */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+}
