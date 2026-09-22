@@ -10970,34 +10970,29 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+/* Custom PDF Download Link styling */
+a#download-btn.btn-download {
+  display: block;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+a#download-btn.btn-download:hover {
+  color: #fff;
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hide download link during print view */
 @media print {
-
-  /* Hide interactive site elements like download buttons or navbars */
-  .no-print,
-  nav,
-  footer,
-  #download-btn {
+  .no-print {
     display: none !important;
-  }
-
-  /* Ensure background colors and images print properly */
-  body {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
-
-  /* Prevent page breaks inside key blocks like jobs or education items */
-  .job-item,
-  .education-item,
-  .project-card {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  /* Unfurl links to show full URL text if desired */
-  a[href]:after {
-    content: " (" attr(href) ")";
   }
 }
